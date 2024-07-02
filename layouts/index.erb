@@ -1,0 +1,25 @@
+<div class="container-fluid p-4">
+  <div class="col-12">
+    <div class="row">
+     <h1><%= @item[:title] %></h1>
+    </div>
+    <div class="row">
+      <%= yield %>
+    </div>
+    <div class="row">
+    <h1>Our projects</h1>
+      <% @item[:projects].each do |project| %>
+        <% logo = project[:logo] ? project[:logo] : 'ros-infrastructure.jpg' %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+            <img src="/images/<%= logo %>" alt="<%= project[:title] %> logo" class="card-img-top logo">
+            <div class="card-body">
+              <h5 class="card-title"><%= project[:title] %></h5>
+              <p class="card-text"><%= project[:description] %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

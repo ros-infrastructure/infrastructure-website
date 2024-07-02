@@ -1,15 +1,45 @@
 #!/usr/bin/env ruby
 
-compile '/**/*.md' do
-  filter :kramdown
-  layout '/default.*'
+preprocess do
 
-  if item.identifier =~ '**/index.*'
-    write item.identifier.without_ext + '.html'
-  else
-    write item.identifier.without_ext + '/index.html'
-  end
+  # Add index extra data
+  index = @items['/index.md']
+
+  projects = @items.find_all '/projects/*.md'
+  # puts index.attributes
+  index[:projects] =  projects
+
+  # projects.map do |e|
+  #   { title: e[:title],
+  #     description: e[:description],
+  #     logo: e[:logo] ? e[:logo] : 'ros-infrastructure.jpg'}
+  # end
 end
+
+compile '/projects/*.md' do
+  filter :kramdown
+  layout '/project.erb'
+  write item.identifier.without_ext + '/index.html'
+end
+
+compile '/index.md' do
+  filter :kramdown
+  layout '/index.erb'
+  layout '/default.erb'
+  # puts item[:projects]
+  write '/index.html'
+end
+
+# compile '/**/*.md' do
+#   filter :kramdown
+#   layout '/default.*'
+
+#   if item.identifier =~ '**/index.*'
+#     write item.identifier.without_ext + '.html'
+#   else
+#     write item.identifier.without_ext + '/index.html'
+#   end
+# end
 
 passthrough '/**/*'
 
