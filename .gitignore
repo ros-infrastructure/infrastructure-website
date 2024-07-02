@@ -1,0 +1,6 @@
+# Nanoc crash logs
+crash.log
+
+# Nanoc output and temporary files
+output/
+tmp/
