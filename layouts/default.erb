@@ -15,6 +15,22 @@
     <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
   </head>
   <body>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-md p-2">
+      <a class="navbar-brand" href="/">
+        <img src="/images/ros-infrastructure.jpg" width="50" height="50" alt="Infrastructure logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="/projects">Projects</a>
+          <a class="nav-item nav-link active" href="/team">Team</a>
+          <a class="nav-item nav-link active" href="/contribute">Contribute</a>
+          <a class="nav-item nav-link active" href="https://status.openrobotics.org">status.openrobotics.org</a>
+        </div>
+      </div>
+    </nav>
     <div class="container-fluid p-4">
       <%= yield %>
     </div>
