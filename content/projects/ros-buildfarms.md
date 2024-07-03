@@ -1,9 +1,8 @@
 ---
 title: Ros Buildfarms
+logo: ros-infrastructure.jpg
 description: The ROS build farms are an important infrastructure to support the ROS ecosystem, provided and maintained by Open Robotics
 ---
-
-# ROS Buildfarms
 
 The ROS build farms are an important infrastructure to support the ROS ecosystem, provided and maintained by Open Robotics.
 They provide building of source and binary packages, continuous integration, testing, and analysis for ROS 1 and ROS 2 packages.

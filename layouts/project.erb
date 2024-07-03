@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-center">
+  <div class="col-sm-12 col-md-8">
+    <div class="row">
+      <h1 class="project-title"><%= @item[:title] %></h1>
+    </div>
+    <div class="row">
+      <img src="/images/<%= @item[:logo] %>" alt="<%= @item[:title] %> logo" class="logo">
+    </div>
+    <%= yield %>
+  </div>
+</div>
