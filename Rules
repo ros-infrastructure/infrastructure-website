@@ -12,6 +12,7 @@ preprocess do
   @items.create('', { members: members }, '/team/index.html')
 end
 
+# Individual pages
 compile '/projects/*.md' do
   filter :kramdown
   layout '/project.erb'
@@ -19,6 +20,14 @@ compile '/projects/*.md' do
   write item.identifier.without_ext + '/index.html'
 end
 
+compile '/team/*.md' do
+  filter :kramdown
+  layout '/team-member.erb'
+  layout '/default.erb'
+  write item.identifier.without_ext + '/index.html'
+end
+
+# Index pages
 compile '/projects/index.html' do
   layout '/projects-all.erb'
   layout '/default.erb'
@@ -38,13 +47,7 @@ compile '/index.md' do
   write '/index.html'
 end
 
-compile '/team/*.md' do
-  filter :kramdown
-  layout '/team-member.erb'
-  layout '/default.erb'
-  write item.identifier.without_ext + '/index.html'
-end
-
+# Default rules
 compile '/**/*.md' do
   filter :kramdown
   layout '/default.erb'
