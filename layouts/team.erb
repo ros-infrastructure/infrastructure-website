@@ -1,0 +1,22 @@
+<div class="container-fluid p-4">
+  <div class="row">
+    <h1>Our Team</h1>
+      <% @item[:members].each do |member| %>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card">
+              <a href="<%= member.identifier.without_ext %>">
+                <%= parse_markdown_link member[:picture], :image, "card-img-top" %>
+                <div class="card-body">
+                  <h5 class="card-title"><%= member[:name] %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted">PMC <%= member[:role] %></h6>
+                  <p><b>Username:</b> <%= member[:username] %></p>
+                  <p><b>Affiliation:</b> <%= parse_markdown_link member[:affiliation], :link %></p>
+                </div>
+              </a>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
