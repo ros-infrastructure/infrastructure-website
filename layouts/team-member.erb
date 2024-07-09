@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-center">
+  <div class="col-sm-12 col-md-8">
+    <div class="row">
+      <h1 class="page-title"><%= @item[:name] %></h1>
+    </div>
+    <div class="row">
+      <%= parse_markdown_link @item[:picture], :image, "member-picture" %>
+    </div>
+    <div class="row">
+      <%= yield %>
+    </div>
+    <div class="row">
+      <dl>
+        <p><b>Affiliation:</b> <%= parse_markdown_link @item[:affiliation], :link %></p>
+        <p><b>Username:</b> <%= @item[:username] %></p>
+        <p><b>Prefered Timezone:</b> <%= @item[:timezone] %></p>
+        <p><b>Role:</b> PMC <%= @item[:role] %></p>
+        <p><b>Profiles:</b></p>
+        <ul>
+          <% @item[:urls].each do |url| %>
+            <li><a href="<%= url %>"><%= url %></a></li>
+          <% end %>
+        </ul>
+      </dl>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,12 @@ img.logo {
   height: 200px;
 }
 
-h1.project-title {
+img.member-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+h1.page-title {
   text-align: center;
 }
 
