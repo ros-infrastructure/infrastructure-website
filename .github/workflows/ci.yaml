@@ -1,0 +1,15 @@
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  compile:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: earthly/actions-setup@v1
+      - name: nanoc compile
+        run: |
+          earthly --ci +build
