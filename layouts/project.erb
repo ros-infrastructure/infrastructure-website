@@ -7,5 +7,6 @@
       <img src="/images/<%= @item[:logo] %>" alt="<%= @item[:title] %> logo" class="logo">
     </div>
     <%= yield %>
+    <p>For more information check <a href="<%= @item[:docs_url] %>"><%= @item[:title] %> Documentation</a></p>
   </div>
 </div>

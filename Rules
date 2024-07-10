@@ -10,6 +10,7 @@ preprocess do
 
   @items.create('', { projects: projects }, '/projects/index.html')
   @items.create('', { members: members }, '/team/index.html')
+  @items.create('', {projects: projects}, '/documentation/index.html')
 end
 
 # Individual pages
@@ -36,6 +37,12 @@ end
 
 compile '/team/index.html' do
   layout '/team.erb'
+  layout '/default.erb'
+  write item.identifier
+end
+
+compile '/documentation/index.html' do
+  layout '/documentation.erb'
   layout '/default.erb'
   write item.identifier
 end

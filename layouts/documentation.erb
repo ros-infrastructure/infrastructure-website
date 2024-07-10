@@ -1,0 +1,11 @@
+<div class="row">
+  <h1>Check the documentation</h1>
+  <div class="col-xs-12 col-sm-6 col-md-4">
+    <ul>
+    <% @item[:projects].each do |project| %>
+      <li><a href="<%= project[:docs_url] %>"><%= project[:title] %> Documentation</a></li>
+    <% end %>
+    </ul>
+  </div>
+  </div>
+</div>
