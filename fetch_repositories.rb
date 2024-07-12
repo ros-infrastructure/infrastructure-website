@@ -4,10 +4,6 @@ require "yaml"
 require "json"
 require "net/http"
 
-# Add a repository link in `repos.yml` file.
-# After that, run this script as: `./fetch_repositories.rb`
-# A .md file from each repository will be created in `/content/repos` folder
-
 def get_repos
   repos = []
   repos_content = YAML::load_file 'repos.yml'
