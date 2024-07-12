@@ -38,6 +38,4 @@ def write_repos(repos)
   end
 end
 
-repos = get_repos
-# File.open('repos.json', 'w').write(JSON.dump(repos))
 write_repos(get_repos)
