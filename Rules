@@ -32,7 +32,6 @@ compile '/team/*.md' do
 end
 
 compile '/repos/*.md' do
-  filter :kramdown
   layout '/repo.erb'
   layout '/default.erb'
   write item.identifier.without_ext + '/index.html'
