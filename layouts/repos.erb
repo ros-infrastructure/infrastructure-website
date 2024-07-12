@@ -1,10 +1,8 @@
 <div class="row">
   <h1>Managed repositories</h1>
-  <!--
   <ul>
-    <% @items[:repos].each do |repo| %>
-      <li><a href="/repos/<%= repo[:id] %>"><%= repo[:name] %></a></li>
+    <% @item[:repos].each do |repo| %>
+      <li><a href="<%= repo.identifier.without_ext %>"><%= repo[:name] %></a></li>
     <% end %>
   </ul>
-  -->
 </div>

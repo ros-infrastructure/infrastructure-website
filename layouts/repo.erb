@@ -1,5 +1,7 @@
 <div class="row">
   <h1>Repo: <a href="<%= @item[:url] %>"><%= @item[:name] %></a></h1>
+  <h5>Owner: <%= @item[:owner] %></h5>
   <br>
-  <%= yield %>
+  <h5>Description:</h5>
+  <p><%= @item[:description] || 'No description provided' %></p>
 </div>
