@@ -77,8 +77,6 @@ compile '/**/*.md' do
   write item.identifier.without_ext + '/index.html'
 end
 
-ignore '/repos.yml'
-
 passthrough '/**/*'
 
 layout '/**/*', :erb
