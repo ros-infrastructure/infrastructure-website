@@ -1,0 +1,4 @@
+repos:
+  - https://github.com/osrf/buildfarm-tools
+  - https://github.com/ros2/ci
+  - https://github.com/ros-infrastructure/infrastructure-website

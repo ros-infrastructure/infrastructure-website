@@ -1,16 +1,19 @@
 #!/usr/bin/env ruby
 
 preprocess do
-  # Add index extra data
-  index = @items['/index.md']
   projects = @items.find_all '/projects/*.md'
   members = @items.find_all '/team/*.md'
+  repos = @items.find_all '/repos/*.md'
+
+  # Add index extra data
+  index = @items['/index.md']
   index[:projects] =  projects
   index[:members] = members
 
   @items.create('', { projects: projects }, '/projects/index.html')
   @items.create('', { members: members }, '/team/index.html')
-  @items.create('', {projects: projects}, '/documentation/index.html')
+  @items.create('', { projects: projects }, '/documentation/index.html')
+  @items.create('', { repos: repos }, '/repos/index.html')
 end
 
 # Individual pages
@@ -24,6 +27,13 @@ end
 compile '/team/*.md' do
   filter :kramdown
   layout '/team-member.erb'
+  layout '/default.erb'
+  write item.identifier.without_ext + '/index.html'
+end
+
+compile '/repos/*.md' do
+  filter :kramdown
+  layout '/repo.erb'
   layout '/default.erb'
   write item.identifier.without_ext + '/index.html'
 end
@@ -47,6 +57,12 @@ compile '/documentation/index.html' do
   write item.identifier
 end
 
+compile '/repos/index.html' do
+  layout '/repos.erb'
+  layout '/default.erb'
+  write item.identifier
+end
+
 compile '/index.md' do
   filter :kramdown
   layout '/index.erb'
@@ -60,6 +76,8 @@ compile '/**/*.md' do
   layout '/default.erb'
   write item.identifier.without_ext + '/index.html'
 end
+
+ignore '/repos.yml'
 
 passthrough '/**/*'
 
