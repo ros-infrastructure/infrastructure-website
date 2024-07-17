@@ -2,7 +2,8 @@
 title: OSRA Infrastructure Project
 ---
 
-Welcome to the [OSRA](https://osralliance.org/) Infrastructure Project Site. This project aims to support the ROS and Gazebo ecosystem by providing essential infrastructure, including buildfarms, documentation, and tools for ROS and gazebo packages.
+Welcome to the [OSRA](https://osralliance.org/) Infrastructure Project Site.
+This project aims to support the ROS and Gazebo ecosystem by providing essential infrastructure, including buildfarms, documentation, and tools for ROS and gazebo packages.
 
 This site is a work in progress and will be updated as the project progresses (and learn how to use Nanoc).
 
