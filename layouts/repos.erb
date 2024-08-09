@@ -1,8 +1,10 @@
 <div class="row">
   <h1>Managed repositories</h1>
   <ul>
-    <% @item[:repos].each do |repo| %>
-      <li><a href="<%= repo.identifier.without_ext %>"><%= repo[:name] %></a></li>
+
+    <%= @items.find_all("/repos/*.md").size %>
+    <% @items.find_all("/repos/*.md").each do |repo| %>
+      <%= repo.reps.find{|r| r.name == :default}.compiled_content(snapshot: :last) %>
     <% end %>
   </ul>
 </div>
