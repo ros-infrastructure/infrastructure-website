@@ -1,12 +1,12 @@
 ---
-title: OSRA Infrastructure Project
+title: Open robotics infrastructure project
 ---
-Welcome to the Open Robotics Infrastructure Project Site.
+Welcome to the open robotics infrastructure project.
 
 This project, chartered as part of the [OSRA](https://osralliance.org), supports the Open Robotics developers and community by providing essential infrastructure.
 This includes managing the build servers, continuous integration platforms, and various online resources that developers and users rely on to create and utilize robotics software.
 
-# How to Contribute
+# How to contribute
 
 
 Want to contribute to the OSRA Infrastructure project? 
