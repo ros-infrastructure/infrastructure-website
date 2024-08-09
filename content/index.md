@@ -3,7 +3,8 @@ title: OSRA Infrastructure Project
 ---
 Welcome to the Open Robotics Infrastructure Project Site.
 
-The Infrastructure project is responsible for maintaining and improving the essential tools and systems that underpin the entire ROS and Gazebo ecosystem by providing essential infrastructure. This includes managing the build servers, continuous integration platforms, and various online resources that developers and users rely on to create and utilize robotics software. By ensuring the smooth operation of these critical components, the Infrastructure project plays a vital role in supporting the development and growth of the robotics community.
+This project, chartered as part of the [OSRA](https://osralliance.org), supports the Open Robotics developers and community by providing essential infrastructure.
+This includes managing the build servers, continuous integration platforms, and various online resources that developers and users rely on to create and utilize robotics software.
 
 # How to Contribute
 
