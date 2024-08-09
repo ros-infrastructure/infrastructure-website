@@ -18,5 +18,5 @@ To learn more about how to contribute, check out the contribution guidelines on 
 
 If you would like to know more about the project, please check out the following resources:
 
-  <a class="btn btn-primary" role="button" target="_blank" href="https://osralliance.org/staging/wp-content/uploads/2024/03/OSRA-explainer.pdf">OSRA Explainer</a>
-  <a class="btn btn-primary" role="button" target="_blank" href="https://osralliance.org/staging/wp-content/uploads/2024/03/infrastructure_project_charter.pdf">Infrastructure Project Charter</a>
+* [The Open Source Robotics Alliance (OSRA) Explained](https://osralliance.org/staging/wp-content/uploads/2024/03/OSRA-explainer.pdf)
+* [Infrastructure project charter](https://osralliance.org/staging/wp-content/uploads/2024/03/infrastructure_project_charter.pdf)
