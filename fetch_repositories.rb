@@ -22,7 +22,7 @@ end
 
 def write_repos(repos)
   repos.each do |repo|
-    repo['name'] = repo['full_name'].gsub('/', '-')
+    repo['name'] = repo['full_name'].gsub('/', '--')
     File.open("content/repos/#{repo['name']}.md", 'w') do |file|
       file.write "---\n" \
       "name: #{repo['name']}\n" \
