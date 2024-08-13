@@ -3,7 +3,6 @@
 preprocess do
   projects = @items.find_all '/projects/*.md'
   members = @items.find_all '/team/*.md'
-  repos = @items.find_all '/repos/*.md'
 
   # Add index extra data
   index = @items['/index.md']
@@ -13,7 +12,7 @@ preprocess do
   @items.create('', { projects: projects }, '/projects/index.html')
   @items.create('', { members: members }, '/team/index.html')
   @items.create('', { projects: projects }, '/documentation/index.html')
-  @items.create('', { repos: repos }, '/repos/index.html')
+  @items.create('', {}, '/repos/index.html')
 end
 
 # Individual pages
