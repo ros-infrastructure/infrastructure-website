@@ -33,7 +33,7 @@ end
 
 compile '/repos/*.md' do
   layout '/repo.erb'
-  write item.identifier.without_ext + '/index.html'
+  write nil
 end
 
 # Index pages
