@@ -1,9 +1,8 @@
 <div class="row">
-  <h1>Managed repositories</h1>
+  <% repos = @items.find_all("/repos/*.md") %>
+  <h1>Managed repositories (<%= repos.size %>)</h1>
   <ul>
-
-    <%= @items.find_all("/repos/*.md").size %>
-    <% @items.find_all("/repos/*.md").each do |repo| %>
+    <% repos.each do |repo| %>
       <%= repo.reps.find{|r| r.name == :default}.compiled_content(snapshot: :last) %>
     <% end %>
   </ul>
