@@ -14,12 +14,9 @@ jobs:
       - uses: earthly/actions-setup@v1
       - name: nanoc compile
         run: |
-          earthly --ci +build
-  upload:
-    runs-on: ubuntu-22.04
-    if: ${{ github.event_name == "push" }}
-    needs: compile
-    steps:
-      - uses: actions/upload-pages-artifact@v3
+          earthly --output --ci +build
+      - name: Upload for GitHub Pages
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/upload-pages-artifact@v3
         with:
           path: output
