@@ -1,6 +1,6 @@
 <div class="row">
   <h1>Our projects</h1>
-    <% @item[:projects].each do |project| %>
+    <% @items.find_all('/projects/*.md').each do |project| %>
       <div class="col-xs-12 col-sm-6 col-md-4 py-2">
         <div class="card">
           <a href="<%= project.identifier.without_ext %>">
