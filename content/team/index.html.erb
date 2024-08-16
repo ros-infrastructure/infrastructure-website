@@ -1,6 +1,6 @@
 <div class="row">
   <h1>Our Team</h1>
-    <% @item[:members].each do |member| %>
+    <% @items.find_all('/team/*.md').each do |member| %>
       <div class="col-xs-12 col-sm-6 col-md-4 py-2">
         <div class="card">
             <a href="<%= member.identifier.without_ext %>">

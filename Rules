@@ -1,20 +1,5 @@
 #!/usr/bin/env ruby
 
-preprocess do
-  projects = @items.find_all '/projects/*.md'
-  members = @items.find_all '/team/*.md'
-
-  # Add index extra data
-  index = @items['/index.md']
-  index[:projects] =  projects
-  index[:members] = members
-
-  @items.create('', { projects: projects }, '/projects/index.html')
-  @items.create('', { members: members }, '/team/index.html')
-  @items.create('', { projects: projects }, '/documentation/index.html')
-  @items.create('', {}, '/repos/index.html')
-end
-
 # Individual pages
 compile '/projects/*.md' do
   filter :kramdown
@@ -36,28 +21,10 @@ compile '/repos/*.md' do
 end
 
 # Index pages
-compile '/projects/index.html' do
-  layout '/projects-all.erb'
+compile '/**/index.html.erb' do
+  filter :erb
   layout '/default.erb'
-  write item.identifier
-end
-
-compile '/team/index.html' do
-  layout '/team.erb'
-  layout '/default.erb'
-  write item.identifier
-end
-
-compile '/documentation/index.html' do
-  layout '/documentation.erb'
-  layout '/default.erb'
-  write item.identifier
-end
-
-compile '/repos/index.html' do
-  layout '/repos.erb'
-  layout '/default.erb'
-  write item.identifier
+  write item.identifier.without_ext
 end
 
 compile '/index.md' do
