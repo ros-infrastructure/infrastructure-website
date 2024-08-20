@@ -4,3 +4,6 @@ crash.log
 # Nanoc output and temporary files
 output/
 tmp/
+
+# Bundler vendor
+vendor/bundle/
