@@ -1,0 +1,33 @@
+---
+name: Deploy to GitHub Pages
+on:
+  # NOTE: As of 2024-08-15, this event will only trigger a workflow run if
+  # the workflow file is on the default branch.
+  # This is our desired behavior but if this default ever changes we may need
+  # to add additional guard clauses to make sure we are only deploying
+  # artifacts from the main branch.
+  #
+  # https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#workflow_run
+  workflow_run:
+    workflows: ['CI']
+    types: ['completed']
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    if: ${{ github_event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
