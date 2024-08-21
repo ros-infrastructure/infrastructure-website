@@ -6,6 +6,7 @@ on:
   pull_request:
     branches: ["main"]
 
+
 jobs:
   compile:
     runs-on: ubuntu-22.04
@@ -20,3 +21,20 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: output
+  deploy:
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
