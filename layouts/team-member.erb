@@ -4,7 +4,7 @@
       <h1 class="page-title"><%= @item[:name] %></h1>
     </div>
     <div class="row">
-      <%= parse_markdown_link @item[:picture], :image, "member-picture" %>
+      <%= parse_markdown_link @item[:picture], :image, "member-picture", @config[:base_url] %>
     </div>
     <div class="row">
       <%= yield %>
