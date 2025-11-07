@@ -4,7 +4,7 @@
       <h1 class="page-title"><%= @item[:title] %></h1>
     </div>
     <div class="row">
-      <img src="/images/<%= @item[:logo] %>" alt="<%= @item[:title] %> logo" class="logo">
+      <img src="<%= @config[:base_url] %>/images/<%= @item[:logo] %>" alt="<%= @item[:title] %> logo" class="logo">
     </div>
     <%= yield %>
     <p>For more information check <a href="<%= @item[:docs_url] %>"><%= @item[:title] %> Documentation</a></p>

@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
+preprocess do
+  config[:base_url] = ENV.fetch('INFRA_BASE_URL', '')
+end
 
 # Individual pages
 compile '/projects/*.md' do
