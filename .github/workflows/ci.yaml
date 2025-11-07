@@ -1,5 +1,5 @@
 ---
-name: CI
+name: Build and Deploy
 on:
   push:
     branches: ["main"]
@@ -32,8 +32,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-22.04
+    needs: compile
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
