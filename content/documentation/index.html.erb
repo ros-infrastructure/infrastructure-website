@@ -1,11 +1,18 @@
-<div class="row">
-  <h1>Check the documentation</h1>
-  <div class="col-xs-12 col-sm-6 col-md-4">
-    <ul>
-    <% @items.find_all('/projects/*.md').each do |project| %>
-      <li><a href="<%= project[:docs_url] %>"><%= project[:title] %> Documentation</a></li>
-    <% end %>
-    </ul>
+<div class="row text-center">
+  <div class="col-12">
+    <h1 class="page-title">Check the documentation</h1>
   </div>
+</div>
+<div class="row justify-content-center mt-4">
+  <div class="col-12 col-md-8">
+    <div class="list-group">
+      <% @items.find_all('/projects/*.md').each do |project| %>
+        <% if project[:docs_url] %>
+          <a href="<%= project[:docs_url] %>" class="list-group-item list-group-item-action">
+            <%= project[:title] %> Documentation
+          </a>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

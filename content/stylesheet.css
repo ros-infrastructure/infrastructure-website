@@ -1,26 +1,91 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --light-gray: #f8f9fa;
+  --dark-gray: #343a40;
+  --white: #ffffff;
+}
+
 body {
-  background: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
 }
 
-img.logo {
-  display: block;
-
-  margin: 0 auto;
-
-  width: 200px;
-  height: 200px;
+a {
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
-img.member-picture {
-  max-width: 100%;
-  height: auto;
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
-h1.page-title {
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand img {
+  border-radius: 50%;
+}
+
+.page-title {
+  color: var(--dark-gray);
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+  transition: transform .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card a {
   text-decoration: none;
   color: inherit;
+}
+
+.card-title {
+  color: var(--primary-color);
+}
+
+.card-text {
+  color: var(--secondary-color);
+}
+
+img.logo {
+  display: block;
+  margin: 2rem auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+img.member-picture {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.team-member-card-img {
+  width: 100%;
+  height: 350px; /* Adjust as needed for desired square size */
+  object-fit: cover;
+  border-top-left-radius: calc(10px - 1px);
+  border-top-right-radius: calc(10px - 1px);
+}
+
+.card.team-member-card {
+  height: 100%; /* Ensure all cards have the same height */
 }

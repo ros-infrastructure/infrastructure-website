@@ -1,26 +1,27 @@
-<div class="container-fluid p-4">
-  <div class="col-12">
-    <div class="row">
-     <h1><%= @item[:title] %></h1>
-    </div>
-    <div class="row">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="page-title"><%= @item[:title] %></h1>
       <%= yield %>
     </div>
-    <div class="row">
-    <h1>Our projects</h1>
-      <% @items.find_all('/projects/*.md').each do |project| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card">
-            <a href="<%= @config[:base_url] %><%= project.identifier.without_ext %>">
-              <img src="<%= @config[:base_url] %>/images/<%= project[:logo] %>" alt="<%= project[:title] %> logo" class="card-img-top logo">
-              <div class="card-body">
-                <h5 class="card-title"><%= project[:title] %></h5>
-                <p class="card-text"><%= project[:description] %></p>
-              </div>
-            </a>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <h1 class="page-title">Our projects</h1>
+      <div class="row">
+        <% @items.find_all('/projects/*.md').each do |project| %>
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+              <a href="<%= @config[:base_url] %><%= project.identifier.without_ext %>">
+                <img src="<%= @config[:base_url] %>/images/<%= project[:logo] %>" alt="<%= project[:title] %> logo" class="card-img-top logo">
+                <div class="card-body">
+                  <h5 class="card-title"><%= project[:title] %></h5>
+                  <p class="card-text"><%= project[:description] %></p>
+                </div>
+              </a>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>

@@ -1,6 +1,9 @@
-<div class="row">
-  <h1><a href="<%= @item[:url] %>"><%= @item[:name] %></a></h1>
-  <% if @item[:description] %>
-  <p><%= @item[:description] %></p>
-  <% end %>
+<div class="row text-center">
+  <div class="col-12">
+    <h1 class="page-title"><a href="<%= @item[:url] %>"><%= @item[:name] %></a></h1>
+    <% if @item[:description] %>
+      <p class="lead"><%= @item[:description] %></p>
+    <% end %>
+    <p class="mt-4"><a href="<%= @item[:url] %>" class="btn btn-primary">View Repository</a></p>
+  </div>
 </div>
