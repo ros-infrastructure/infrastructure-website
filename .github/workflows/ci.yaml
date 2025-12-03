@@ -22,7 +22,7 @@ jobs:
         with:
           path: output
   deploy:
-    if: github.event.push
+    if: github.event_name == 'push'
     concurrency:
       group: "pages"
       cancel-in-progress: false
