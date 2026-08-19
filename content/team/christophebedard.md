@@ -1,6 +1,6 @@
 ---
 name: Christophe Bédard
-affiliation: "[Apex.AI](https://apex.ai/)"
+affiliation: "[KUKA](https://www.kuka.com/)"
 username: christophebedard
 timezone: America/Los_Angeles
 picture: "![christophebedard's avatar](/images/christophebedard.png)"
