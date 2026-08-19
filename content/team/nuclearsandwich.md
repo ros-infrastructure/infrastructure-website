@@ -7,8 +7,7 @@ picture: "![nuclearsandwich's avatar](/images/nuclearsandwich.png)"
 role: project leader
 urls:
 - https://github.com/nuclearsandwich
-- https://discourse.ros.org/u/nuclearsandwich
-- https://community.gazebosim.org/u/nuclearsandwich
+- https://discourse.openrobotics.org/u/nuclearsandwich
 - https://robotics.stackexchange.com/users/30981/nuclearsandwich
 ---
 Steven! is the Project Leader for Infrastructure, carrying forward experience gained working Open Robotics Infrastructure.
