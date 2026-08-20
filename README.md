@@ -31,8 +31,9 @@ To get started with developing the OSRA Infrastructure Project website:
 1. Ensure you have Ruby and Bundler installed.
 2. Clone the project repository.
 3. Run `bundle install` to install the necessary Ruby gems.
+3. Follow the [instructions on the Nanoc site](https://nanoc.app/doc/installation/) to install the static site generator.
 4. Follow [repo fetching instructions](#fetching-repo-data) to fetch the repository data.
-5. Use `nanoc live` to start a local development server.
+5. Use `nanoc live` to start a local development server. You can access it at http://localhost:3000
 
 ### Fetching Repo Data
 
