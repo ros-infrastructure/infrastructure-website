@@ -1,17 +1,14 @@
-<div class="row">
-  <h1>Our projects</h1>
+---
+title: Projects
+---
+<div class="container">
+  <div class="page-head">
+    <span class="eyebrow">Managed by this project</span>
+    <h1>Projects</h1>
+  </div>
+  <div class="card-grid">
     <% @items.find_all('/projects/*.md').each do |project| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 py-2">
-        <div class="card">
-          <a href="<%= @config[:base_url] %><%= project.identifier.without_ext %>">
-            <img src="<%= @config[:base_url] %>/images/<%= project[:logo] %>" alt="<%= project[:title] %> logo" class="card-img-top logo">
-            <div class="card-body">
-              <h5 class="card-title"><%= project[:title] %></h5>
-              <p class="card-text"><%= project[:description] %></p>
-            </div>
-          </a>
-        </div>
-      </div>
+      <%= render '/project_card.erb', project: project %>
     <% end %>
   </div>
 </div>

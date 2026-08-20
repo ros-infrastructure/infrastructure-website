@@ -1,39 +1,37 @@
-  <div class="row text-center">
-    <div class="col-12">
-      <h1 class="page-title"><%= @item[:name] %></h1>
-      <%= parse_markdown_link @item[:picture], :image, "member-picture mb-4", @config[:base_url] %>
+<div class="container detail">
+  <div class="detail__head">
+    <%= parse_markdown_link @item[:picture], :image, "detail__portrait", @config[:base_url] %>
+    <div>
+      <span class="eyebrow">Project management committee</span>
+      <h1><%= @item[:name] %></h1>
+      <span class="role">PMC <%= @item[:role] %></span>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <%= yield %>
-    </div>
-  </div>
-  <div class="row mt-4">
-    <div class="col-12">
-      <dl class="row">
-        <dt class="col-sm-3">Affiliation:</dt>
-        <dd class="col-sm-9"><%= parse_markdown_link @item[:affiliation], :link %></dd>
 
-        <dt class="col-sm-3">Username:</dt>
-        <dd class="col-sm-9"><%= @item[:username] %></dd>
+  <div class="prose"><%= yield %></div>
 
-        <dt class="col-sm-3">Preferred Timezone:</dt>
-        <dd class="col-sm-9"><%= @item[:timezone] %></dd>
+  <dl class="facts">
+    <dt>Affiliation</dt>
+    <dd><%= parse_markdown_link @item[:affiliation], :link %></dd>
 
-        <dt class="col-sm-3">Role:</dt>
-        <dd class="col-sm-9">PMC <%= @item[:role] %></dd>
+    <dt>Username</dt>
+    <dd><%= @item[:username] %></dd>
 
-        <% if @item[:urls] && !@item[:urls].empty? %>
-          <dt class="col-sm-3">Profiles:</dt>
-          <dd class="col-sm-9">
-            <ul class="list-unstyled">
-              <% @item[:urls].each do |url| %>
-                <li><a href="<%= url %>" target="_blank" rel="noopener noreferrer"><%= url %></a></li>
-              <% end %>
-            </ul>
-          </dd>
-        <% end %>
-      </dl>
-    </div>
-  </div>
+    <dt>Timezone</dt>
+    <dd><%= @item[:timezone] %></dd>
+
+    <dt>Role</dt>
+    <dd>PMC <%= @item[:role] %></dd>
+
+    <% if @item[:urls] && !@item[:urls].empty? %>
+      <dt>Profiles</dt>
+      <dd>
+        <ul>
+          <% @item[:urls].each do |url| %>
+            <li><a href="<%= url %>" target="_blank" rel="noopener noreferrer"><%= url %></a></li>
+          <% end %>
+        </ul>
+      </dd>
+    <% end %>
+  </dl>
+</div>
