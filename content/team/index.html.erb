@@ -1,24 +1,19 @@
----
-title: Our team
----
-<div class="container">
-  <div class="page-head">
-    <span class="eyebrow">Project management committee</span>
-    <h1>Our team</h1>
-  </div>
-  <div class="card-grid">
+<div class="row">
+  <h1>Our Team</h1>
     <% @items.find_all('/team/*.md').each do |member| %>
-      <article class="card">
-        <a class="card-link" href="<%= @config[:base_url] %><%= member.identifier.without_ext %>">
-          <%= parse_markdown_link member[:picture], :image, "team-card__img", @config[:base_url] %>
-          <div class="card__body">
-            <h3 class="team-card__name"><%= member[:name] %></h3>
-            <span class="role">PMC <%= member[:role] %></span>
-            <p class="meta-line"><span class="meta-line__label">Username:</span> <%= member[:username] %></p>
-            <p class="meta-line"><span class="meta-line__label">Affiliation:</span> <%= parse_markdown_link member[:affiliation], :text %></p>
-          </div>
-        </a>
-      </article>
+      <div class="col-xs-12 col-sm-6 col-md-4 py-2">
+        <div class="card team-member-card">
+          <a href="<%= @config[:base_url] %><%= member.identifier.without_ext %>">
+            <%= parse_markdown_link member[:picture], :image, "card-img-top team-member-card-img", @config[:base_url] %>
+            <div class="card-body">
+              <h5 class="card-title"><%= member[:name] %></h5>
+              <h6 class="card-subtitle mb-2 text-muted">PMC <%= member[:role] %></h6>
+              <p><b>Username:</b> <%= member[:username] %></p>
+              <p><b>Affiliation:</b> <%= parse_markdown_link member[:affiliation], :link %></p>
+            </div>
+          </a>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

@@ -40,7 +40,6 @@ end
 # Default rules
 compile '/**/*.md' do
   filter :kramdown
-  layout '/page.erb'
   layout '/default.erb'
   write item.identifier.without_ext + '/index.html'
 end
