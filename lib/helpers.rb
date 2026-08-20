@@ -23,9 +23,8 @@ def nav_items
     ['Projects',      '/projects'],
     ['Team',          '/team'],
     ['Documentation', '/documentation'],
-    ['Repositories',  '/repos'],
+    ['Contribute',  '/repos'],
     ['Dashboard',     'https://osrf.github.io/buildfarm-tools/dashboard/index.html'],
-    ['Contribute',    '/contribute'],
   ]
 end
 
