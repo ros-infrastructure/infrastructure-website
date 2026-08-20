@@ -1,14 +1,23 @@
-  <div class="row">
-    <div class="col-12 text-center">
-      <h1 class="page-title"><%= @item[:title] %></h1>
-      <img src="<%= @config[:base_url] %>/images/<%= @item[:logo] %>" alt="<%= @item[:title] %> logo" class="logo mb-4">
+<div class="container detail">
+  <div class="detail__head">
+    <img class="detail__logo" src="<%= @config[:base_url] %>/images/<%= @item[:logo] %>" alt="">
+    <div>
+      <span class="eyebrow">Project</span>
+      <h1><%= @item[:title] %></h1>
+      <span class="tag">[ active ]</span>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <%= yield %>
-      <% if @item[:docs_url] %>
-        <p class="mt-4"><a href="<%= @item[:docs_url] %>" class="btn btn-primary">View Documentation</a></p>
+
+  <div class="prose"><%= yield %></div>
+
+  <% if @item[:url] || @item[:docs_url] %>
+    <p class="detail__actions">
+      <% if @item[:url] %>
+        <a class="btn btn--accent" href="<%= @item[:url] %>" target="_blank" rel="noopener noreferrer">[ <%= @item[:url_label] || 'Open' %> ]</a>
       <% end %>
-    </div>
-  </div>
+      <% if @item[:docs_url] %>
+        <a class="btn<%= ' btn--accent' unless @item[:url] %>" href="<%= @item[:docs_url] %>" target="_blank" rel="noopener noreferrer">[ View documentation ]</a>
+      <% end %>
+    </p>
+  <% end %>
+</div>
