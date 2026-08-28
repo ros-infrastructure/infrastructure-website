@@ -1,19 +1,15 @@
-<div class="row">
-  <h1>Our Team</h1>
-    <% @items.find_all('/team/*.md').each do |member| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 py-2">
-        <div class="card team-member-card">
-          <a href="<%= @config[:base_url] %><%= member.identifier.without_ext %>">
-            <%= parse_markdown_link member[:picture], :image, "card-img-top team-member-card-img", @config[:base_url] %>
-            <div class="card-body">
-              <h5 class="card-title"><%= member[:name] %></h5>
-              <h6 class="card-subtitle mb-2 text-muted">PMC <%= member[:role] %></h6>
-              <p><b>Username:</b> <%= member[:username] %></p>
-              <p><b>Affiliation:</b> <%= parse_markdown_link member[:affiliation], :link %></p>
-            </div>
-          </a>
-        </div>
+<span class="section-label">Project management committee</span>
+<h1 class="page-title">Our team</h1>
+<div class="profile-grid">
+  <% @items.find_all('/team/*.md').each do |member| %>
+    <a class="profile-card" href="<%= @config[:base_url] %><%= member.identifier.without_ext %>">
+      <%= parse_markdown_link member[:picture], :image, "profile-card__img", @config[:base_url] %>
+      <div class="profile-card__body">
+        <p class="profile-card__name"><%= member[:name] %></p>
+        <p class="profile-card__role">PMC <%= member[:role] %></p>
+        <p class="profile-card__meta"><b>Username:</b> <%= member[:username] %></p>
+        <p class="profile-card__meta"><b>Affiliation:</b> <%= /\[(.*)\]/.match(member[:affiliation])[1] %></p>
       </div>
-    <% end %>
-  </div>
+    </a>
+  <% end %>
 </div>

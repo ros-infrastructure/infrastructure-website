@@ -1,9 +1,8 @@
-<div class="row">
-  <% repos = @items.find_all("/repos/*.md") %>
-  <h1>Managed repositories (<%= repos.size %>)</h1>
-  <ul>
-    <% repos.each do |repo| %>
-      <%= repo.reps.find{|r| r.name == :default}.compiled_content(snapshot: :last) %>
-    <% end %>
-  </ul>
+<% repos = @items.find_all("/repos/*.md") %>
+<span class="section-label">Version control</span>
+<h1 class="page-title">Managed repositories <span class="manifest-count">(<%= repos.size %>)</span></h1>
+<div class="manifest-list">
+  <% repos.each do |repo| %>
+    <%= repo.reps.find{|r| r.name == :default}.compiled_content(snapshot: :last) %>
+  <% end %>
 </div>
