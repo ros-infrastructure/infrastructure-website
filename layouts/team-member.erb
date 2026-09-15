@@ -1,39 +1,39 @@
-  <div class="row text-center">
-    <div class="col-12">
-      <h1 class="page-title"><%= @item[:name] %></h1>
-      <%= parse_markdown_link @item[:picture], :image, "member-picture mb-4", @config[:base_url] %>
-    </div>
+<div class="profile-hero">
+  <span class="section-label">PMC <%= @item[:role] %></span>
+  <h1 class="page-title"><%= @item[:name] %></h1>
+  <%= parse_markdown_link @item[:picture], :image, "", @config[:base_url] %>
+</div>
+<div class="project-body">
+  <%= yield %>
+</div>
+
+<div class="kv-list" style="margin-top: 2rem;">
+  <div class="kv-row">
+    <span class="kv-key">affiliation</span>
+    <span class="kv-val"><%= parse_markdown_link @item[:affiliation], :link %></span>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <%= yield %>
-    </div>
+  <div class="kv-row">
+    <span class="kv-key">username</span>
+    <span class="kv-val"><%= @item[:username] %></span>
   </div>
-  <div class="row mt-4">
-    <div class="col-12">
-      <dl class="row">
-        <dt class="col-sm-3">Affiliation:</dt>
-        <dd class="col-sm-9"><%= parse_markdown_link @item[:affiliation], :link %></dd>
-
-        <dt class="col-sm-3">Username:</dt>
-        <dd class="col-sm-9"><%= @item[:username] %></dd>
-
-        <dt class="col-sm-3">Preferred Timezone:</dt>
-        <dd class="col-sm-9"><%= @item[:timezone] %></dd>
-
-        <dt class="col-sm-3">Role:</dt>
-        <dd class="col-sm-9">PMC <%= @item[:role] %></dd>
-
-        <% if @item[:urls] && !@item[:urls].empty? %>
-          <dt class="col-sm-3">Profiles:</dt>
-          <dd class="col-sm-9">
-            <ul class="list-unstyled">
-              <% @item[:urls].each do |url| %>
-                <li><a href="<%= url %>" target="_blank" rel="noopener noreferrer"><%= url %></a></li>
-              <% end %>
-            </ul>
-          </dd>
-        <% end %>
-      </dl>
-    </div>
+  <div class="kv-row">
+    <span class="kv-key">timezone</span>
+    <span class="kv-val"><%= @item[:timezone] %></span>
   </div>
+  <div class="kv-row">
+    <span class="kv-key">role</span>
+    <span class="kv-val">PMC <%= @item[:role] %></span>
+  </div>
+  <% if @item[:urls] && !@item[:urls].empty? %>
+    <div class="kv-row">
+      <span class="kv-key">profiles</span>
+      <span class="kv-val">
+        <ul>
+          <% @item[:urls].each do |url| %>
+            <li><a href="<%= url %>" target="_blank" rel="noopener noreferrer"><%= url %></a></li>
+          <% end %>
+        </ul>
+      </span>
+    </div>
+  <% end %>
+</div>
