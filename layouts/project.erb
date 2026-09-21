@@ -4,7 +4,7 @@
     <div>
       <span class="eyebrow">Project</span>
       <h1><%= @item[:title] %></h1>
-      <span class="tag">[ active ]</span>
+      <span class="tag">Active project</span>
     </div>
   </div>
 
@@ -13,10 +13,10 @@
   <% if @item[:url] || @item[:docs_url] %>
     <p class="detail__actions">
       <% if @item[:url] %>
-        <a class="btn btn--accent" href="<%= @item[:url] %>" target="_blank" rel="noopener noreferrer">[ <%= @item[:url_label] || 'Open' %> ]</a>
+        <a class="btn btn--accent" href="<%= @item[:url] %>" target="_blank" rel="noopener noreferrer"><%= @item[:url_label] || 'Open' %></a>
       <% end %>
       <% if @item[:docs_url] %>
-        <a class="btn<%= ' btn--accent' unless @item[:url] %>" href="<%= @item[:docs_url] %>" target="_blank" rel="noopener noreferrer">[ View documentation ]</a>
+        <a class="btn<%= ' btn--accent' unless @item[:url] %>" href="<%= @item[:docs_url] %>" target="_blank" rel="noopener noreferrer">View documentation</a>
       <% end %>
     </p>
   <% end %>

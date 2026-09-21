@@ -1,9 +1,21 @@
 <section class="hero">
   <div class="container">
-    <div class="hero__body">
-      <span class="badge-pill">OSRA &middot; Infrastructure Project</span>
-      <h1><%= @item[:title] %></h1>
-      <div class="prose"><%= yield %></div>
+    <div class="hero__layout">
+      <div class="hero__body">
+        <span class="badge-pill">OSRA &middot; Infrastructure Project</span>
+        <h1><%= @item[:title] %></h1>
+        <div class="prose"><%= yield %></div>
+      </div>
+
+      <aside class="hero__panel" aria-label="Key resources">
+        <p class="hero__panel-label">Key resources</p>
+        <ul class="hero__panel-list">
+          <li><a href="https://osralliance.org/">Open Source Robotics Alliance</a></li>
+          <li><a href="https://status.openrobotics.org">Infrastructure status</a></li>
+          <li><a href="https://discourse.ros.org/">Community discussions</a></li>
+          <li><a href="https://openrobotics.zulipchat.com/">OSRF Community Zulip</a></li>
+        </ul>
+      </aside>
     </div>
   </div>
 </section>

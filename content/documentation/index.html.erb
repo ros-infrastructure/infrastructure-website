@@ -6,7 +6,7 @@ title: Documentation
     <span class="eyebrow">Reference</span>
     <h1>Check the documentation</h1>
   </div>
-  <div class="row-list" style="max-width: 46rem;">
+  <div class="row-list" style="max-width: 58rem;">
     <% @items.find_all('/projects/*.md').each do |project| %>
       <% if project[:docs_url] %>
         <a class="row-list__item" href="<%= project[:docs_url] %>" target="_blank" rel="noopener noreferrer">
