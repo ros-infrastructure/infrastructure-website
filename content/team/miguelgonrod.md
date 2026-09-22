@@ -4,7 +4,7 @@ affiliation: "[Ekumen](https://www.ekumenlabs.com/)"
 username: miguelgonrod
 timezone: America/Bogota
 picture: "![Miguel Gonzalez](/images/miguelgonrod.jpeg)"
-role: member
+role: committer
 urls:
 - https://github.com/miguelgonrod
 - https://discourse.openrobotics.org/u/miguelgonrod
