@@ -4,7 +4,7 @@ affiliation: "[Ekumen](https://www.ekumenlabs.com/)"
 username: claraberendsen
 timezone: America/Asuncion
 picture: "![claraberendsen's avatar](/images/claraberendsen.png)"
-role: PMC Member
+role: PMC member
 urls:
 - https://github.com/claraberendsen
 - https://discourse.openrobotics.org/u/claraberendsen 
