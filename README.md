@@ -31,12 +31,12 @@ To get started with developing the OSRA Infrastructure Project website:
 1. Ensure you have Ruby and Bundler installed.
 2. Clone the project repository.
 3. Run `bundle install` to install the necessary Ruby gems.
-3. Follow the [instructions on the Nanoc site](https://nanoc.app/doc/installation/) to install the static site generator.
 4. Follow [repo fetching instructions](#fetching-repo-data) to fetch the repository data.
-5. Use `nanoc live` to start a local development server. You can access it at http://localhost:3000
+5. Run `bundle exec nanoc compile` to compile the site.
+6. Use `bundle exec nanoc view` to start a local server. You can access it at http://localhost:3000
 
 ### Fetching Repo Data
 
 The project website fetches data about its managed repositories from the list present in [repos.yml](./repos.yml)
 
-To fetch the repository data run `./fech_repositories.rb` script. This script generates all the repositories markdown files in the `content/repos` directory.
+To fetch the repository data run the `./fetch_repositories.rb` script. This script generates all the repository Markdown files in the `content/repos` directory.
