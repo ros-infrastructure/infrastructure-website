@@ -2,10 +2,11 @@
 
 source 'https://rubygems.org'
 
+gem 'erb'
 gem 'nanoc', '~> 4.13'
 gem 'kramdown', '~> 2.4.0'
 gem 'adsf', '~> 1.5.0'
 
 group 'nanoc' do
-  gem 'nanoc-live'
+  gem 'nanoc-live', require: false
 end

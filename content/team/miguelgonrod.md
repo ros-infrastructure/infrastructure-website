@@ -10,5 +10,5 @@ urls:
 - https://discourse.openrobotics.org/u/miguelgonrod
 - https://miguelgonrod.github.io/
 ---
-Miguel is a PMC mentee of the Infrastructure project, and a reviewer of the ROS 2 and Gazebo buildfarms.
+Miguel is a PMC committer of the Infrastructure project, and a reviewer of the ROS 2 and Gazebo buildfarms.
 He is also a member of the buildfarmers.
