@@ -3,7 +3,7 @@ name: Clara Berendsen
 affiliation: "[Ekumen](https://www.ekumenlabs.com/)"
 username: claraberendsen
 timezone: America/Asuncion
-picture: "![claraberendsen's avatar](/images/claraberendsen.png)"
+picture: "![claraberendsen's avatar](/images/claraberendsen.jpg)"
 role: member
 urls:
 - https://github.com/claraberendsen
